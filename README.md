@@ -4,6 +4,16 @@ A responsive, accessible chat interface built with React and Vite.
 
 **Live demo:** https://chat-interface-sepia-ten.vercel.app/
 
+## Screenshots
+
+### Chat Interface
+
+![Chat Interface](assets/chat-interface-empty.png)
+
+### Chat Interface with Messages
+
+![Chat Interface with Messages](assets/chat-interface-with-messages.png)
+
 ## Features
 
 - **Layout**: Fixed header, scrollable message area, fixed input bar
@@ -41,3 +51,17 @@ Open http://localhost:5173
 - Layout is full-width by design (not capped/centered), with message bubbles capped at `min(600px, 70%)` so text stays readable on large screens while still using the available space.
 
 ## Project structure
+
+```text
+src/
+  components/
+    ChatHeader.jsx
+    ChatWindow.jsx
+    Message.jsx
+    MessageInput.jsx
+    TypingIndicator.jsx
+  hooks/
+    useChatHistory.js
+  App.jsx
+  App.css
+```
