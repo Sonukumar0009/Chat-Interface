@@ -2,6 +2,8 @@
 
 A responsive, accessible chat interface built with React and Vite.
 
+**Live demo:** https://chat-interface-sepia-ten.vercel.app/
+
 ## Features
 
 - **Layout**: Fixed header, scrollable message area, fixed input bar
@@ -12,7 +14,7 @@ A responsive, accessible chat interface built with React and Vite.
 - **Persistence**: Chat history saved to and loaded from localStorage, with a Clear chat option
 - **Typing indicator**: Animated bouncing dots while the bot is "replying"
 - **Accessibility**: Full keyboard navigation, visible focus outlines, `aria-live` region for new messages, `role="log"` on the chat window, descriptive `aria-label`s
-- **Responsive**: Works down to ~375px mobile widths
+- **Responsive**: Full-width layout that adapts down to ~375px mobile widths
 
 ## Tech stack
 
@@ -22,10 +24,10 @@ A responsive, accessible chat interface built with React and Vite.
 
 ## Getting started
 
-\`\`\`bash
+```bash
 npm install
 npm run dev
-\`\`\`
+```
 
 Open http://localhost:5173
 
@@ -36,19 +38,6 @@ Open http://localhost:5173
 - Auto-scroll logic tracks distance from the bottom of the chat window; if the user scrolls more than 100px away from the bottom, new messages no longer force a scroll, until the user manually scrolls back near the bottom.
 - Retry re-uses the original failed message's ID and updates it in place, rather than creating a duplicate message.
 - State management uses a single custom hook (`useChatHistory`) rather than Redux/Context, since the app's state (messages, typing status) is simple and localized to one screen.
+- Layout is full-width by design (not capped/centered), with message bubbles capped at `min(600px, 70%)` so text stays readable on large screens while still using the available space.
 
 ## Project structure
-
-\`\`\`
-src/
-  components/
-    ChatHeader.jsx
-    ChatWindow.jsx
-    Message.jsx
-    MessageInput.jsx
-    TypingIndicator.jsx
-  hooks/
-    useChatHistory.js
-  App.jsx
-  App.css
-\`\`\`
